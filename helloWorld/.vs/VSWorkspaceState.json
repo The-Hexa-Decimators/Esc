@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\helloWorld",
+    "\\helloWorldApp",
+    "\\helloWorldApp\\migrations",
+    "\\helloWorldApp\\migrations\\__pycache__",
+    "\\helloWorldApp\\__pycache__",
+    "\\helloWorld\\__pycache__"
+  ],
+  "PreviewInSolutionExplorer": true
+}
