@@ -54,3 +54,7 @@ def view_items(request):
         return Response(serializer.data)
     else:
         return Response(status=status.HTTP_404_NOT_FOUND)
+
+def home_view(request):
+    return render(request, "home.html")
+
