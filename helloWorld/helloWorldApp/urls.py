@@ -24,4 +24,5 @@ urlpatterns = [
     path('create/', views.add_items, name='add-items'),
     path('all/', views.view_items, name='view_items'),
     path('', home_view ),
+    path('graph/', views.graph_view, name='graph-view'),
 ]
