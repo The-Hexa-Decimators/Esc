@@ -16,6 +16,7 @@ Including another URLconf
 
 from django.urls import path,include
 from .views import hello
+from .views import home_view
 from . import views
 
 urlpatterns = [
@@ -23,4 +24,5 @@ urlpatterns = [
     path('helloWorldApp/', views.ApiOverview, name='home'),
     path('create/', views.add_items, name='add-items'),
     path('all/', views.view_items, name='view_items'),
+    path('', home_view ),
 ]
