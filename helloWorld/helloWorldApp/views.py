@@ -57,7 +57,7 @@ def view_items(request):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
 def home_view(request):
-    return render(request, "home.html")
+    return render(request, "CS4800.html")
 
 def graph_view(request):
     # instantiating the figure object
