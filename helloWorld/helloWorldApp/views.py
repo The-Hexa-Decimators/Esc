@@ -10,7 +10,7 @@ from bokeh.plotting import figure, output_file, show
 
 # Create your views here.
 def hello(request):
-    return HttpResponse('<h1 style="color:red">Goodbye World!!</h1>')
+    return render(request, "CS4800.html")
 
 @api_view(['GET'])
 def ApiOverview(request):
@@ -57,7 +57,7 @@ def view_items(request):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
 def home_view(request):
-    return render(request, "CS4800.html")
+    return render(request, "home.html")
 
 def graph_view(request):
     # instantiating the figure object
