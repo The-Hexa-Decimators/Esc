@@ -64,8 +64,8 @@ def graph_view(request):
     graph = figure(title = "Bokeh Line Graph")
  
     # the points to be plotted
-    x = [1, 7, 4, 4, 7]
-    y = [0, 1, 3, 9, 0]
+    x = [1, 2, 3, 4, 5]
+    y = [1, 2, 5, 2, 1]
     
     # plotting the line graph
     graph.line(x, y)
