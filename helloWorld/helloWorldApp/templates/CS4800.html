@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="/css/common.css" />
     <link rel="stylesheet" type="text/css" href="/css/fonts.css" />
     <link rel="stylesheet" htype="text/css" href="static/CS4800.css" />
+    <link rel="stylesheet" htype="text/css" href="static/style.css" />
     <script type="module" src="static/index.ts"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -115,7 +116,16 @@
             <div class="section2__group">
               <div class="section2__group1">
                 <div class="section2__rect3">
-
+                  <input
+                  id="pac-input"
+                  class="controls"
+                  type="text"
+                  placeholder="Search Box"/>
+                  <div id="map"></div>
+                  <script
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAT_a0hRM9mZrOyvgZEfddibNAUTyoJDoo&callback=initAutocomplete&libraries=places&v=weekly"
+                    defer
+                  ></script>
                 </div>
               </div>
             </div>

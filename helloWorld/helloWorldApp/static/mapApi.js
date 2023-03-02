@@ -4,21 +4,18 @@ function initAutocomplete() {
     zoom: 13,
     mapTypeId: "roadmap",
   });
-  // Create the search box and link it to the UI element.
+
   const input = document.getElementById("pac-input");
   const searchBox = new google.maps.places.SearchBox(input);
 
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-  // Bias the SearchBox results towards current map's viewport.
+
   map.addListener("bounds_changed", () => {
     searchBox.setBounds(map.getBounds());
   });
 
   let markers = [];
 
-  // [START maps_places_searchbox_getplaces]
-  // Listen for the event fired when the user selects a prediction and retrieve
-  // more details for that place.
   searchBox.addListener("places_changed", () => {
     const places = searchBox.getPlaces();
 
@@ -26,13 +23,11 @@ function initAutocomplete() {
       return;
     }
 
-    // Clear out the old markers.
     markers.forEach((marker) => {
       marker.setMap(null);
     });
     markers = [];
 
-    // For each place, get the icon, name and location.F
     const bounds = new google.maps.LatLngBounds();
 
     places.forEach((place) => {
@@ -49,7 +44,7 @@ function initAutocomplete() {
         scaledSize: new google.maps.Size(25, 25),
       };
 
-      // Create a marker for each place.
+
       markers.push(
         new google.maps.Marker({
           map,
@@ -59,7 +54,7 @@ function initAutocomplete() {
         })
       );
       if (place.geometry.viewport) {
-        // Only geocodes have viewport.
+
         bounds.union(place.geometry.viewport);
       } else {
         bounds.extend(place.geometry.location);
@@ -67,7 +62,7 @@ function initAutocomplete() {
     });
     map.fitBounds(bounds);
   });
-  // [END maps_places_searchbox_getplaces]
+
 }
 
 window.initAutocomplete = initAutocomplete;
