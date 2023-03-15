@@ -8,6 +8,7 @@ from rest_framework import serializers
 from rest_framework import status
 from bokeh.plotting import figure, output_file, show
 
+
 # Create your views here.
 def hello(request):
     return render(request, "CS4800.html")
