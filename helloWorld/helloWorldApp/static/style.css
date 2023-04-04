@@ -1,87 +1,117 @@
+/* 
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map. 
+ */
 
-#map {
-  height: 50%;
-  width: 50%;
-}
-
+/* 
+ * Optional: Makes the sample page fill the window. 
+ */
 html,
 body {
+  width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-#description {
-  font-family: Roboto;
-  font-size: 15px;
-  font-weight: 300;
+
+body {
+  padding: 0 !important;
 }
 
-#infowindow-content .title {
-  font-weight: bold;
+table {
+  font-size: 12px;
 }
 
-#infowindow-content {
-  display: none;
+.section1__wrapper5 {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgb(30, 30, 30);
+  color: rgb(250, 7, 7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  height: 20%;
 }
 
-#map #infowindow-content {
-  display: inline;
+
+#map {
+  height: 600px;
+  margin-top: 150px;
+  width: 100%;
+  margin: auto;
 }
 
-.pac-card {
-  background-color: #fff;
-  border: 0;
-  border-radius: 2px;
-  box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
-  margin: 10px;
-  padding: 0 0.5em;
-  font: 400 18px Roboto, Arial, sans-serif;
-  overflow: hidden;
-  font-family: Roboto;
-  padding: 0;
+#listing {
+  position: absolute;
+  width: 250px;
+  height: 600px;
+  overflow: auto;
+  cursor: pointer;
+  overflow-x: hidden;
 }
 
-#pac-container {
-  padding-bottom: 12px;
-  margin-right: 12px;
+#findhotels {
+  font-size: 14px;
 }
 
-.pac-controls {
-  display: inline-block;
-  padding: 5px 11px;
+#locationField {
+  -webkit-box-flex: 1 1 190px;
+  -ms-flex: 1 1 190px;
+  flex: 1 1 90%;
+  background-color:rgb(30, 30, 30);
+  color: rgb(250, 7, 7);
+  
 }
 
-.pac-controls label {
-  font-family: Roboto;
+#controls {
+  -webkit-box-flex: 1 1 140px;
+  -ms-flex: 1 1 140px;
+  flex: 1 1 140px;
+}
+
+#autocomplete {
+  width: 100%;
+}
+
+#country {
+  width: 100%;
+}
+
+.placeIcon {
+  width: 20px;
+  height: 34px;
+  margin: 4px;
+}
+
+.hotelIcon {
+  width: 24px;
+  height: 24px;
+}
+
+#resultsTable {
+  border-collapse: collapse;
+  width: 240px;
+}
+
+#rating {
   font-size: 13px;
-  font-weight: 300;
+  font-family: Arial Unicode MS;
 }
 
-#pac-input {
-  background-color: #fff;
-  font-family: Roboto;
-  font-size: 15px;
-  font-weight: 300;
-  margin-left: 12px;
-  padding: 0 11px 0 13px;
-  text-overflow: ellipsis;
-  width: 400px;
+.iw_table_row {
+  height: 18px;
 }
 
-#pac-input:focus {
-  border-color: #4d90fe;
+.iw_attribute_name {
+  font-weight: bold;
+  text-align: right;
 }
 
-#title {
-  color: #fff;
-  background-color: #4d90fe;
-  font-size: 25px;
-  font-weight: 500;
-  padding: 6px 12px;
+.iw_table_icon {
+  text-align: right;
 }
-
-#target {
-  width: 345px;
-}
-
