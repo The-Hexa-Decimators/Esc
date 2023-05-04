@@ -1,11 +1,43 @@
-/* 
- * Always set the map height explicitly to define the size of the div element
- * that contains the map. 
- */
- #map {
-  height: 75%;
-  width: 100%;
+
+
+.header {
+  background-color: black;
+  color: red;
+  padding: 10px;
+  text-align: center;
+
 }
+
+.header2{
+  background-color: black;
+  height: 40px;
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+}
+
+.header3{
+  background-color: black;
+  color: red;
+  text-align: left;
+  padding: 10px;
+}
+
+
+.boxmajor{
+  height: 1000px;
+  margin: auto;
+  text-align: center;
+  outline-style: double;
+  outline-color: red;
+  outline-width: 10px;
+
+}
+ #map {
+  height: 100%;
+  margin: auto;
+}
+
 
 /* 
  * Optional: Makes the sample page fill the window. 
@@ -15,18 +47,15 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  align-items: center;
+  background-color: black;
 }
 
-#location-form{
-  height: 50 px;
-}
 
 #location-form{
   -webkit-box-flex: 1 1 140px;
   -ms-flex: 1 1 140px;
   flex: 1 1 140px;
+  align-items: center;
 }
 
-#location-form{
-  width: 100%;
-}
