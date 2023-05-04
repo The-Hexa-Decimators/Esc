@@ -111,33 +111,16 @@
 
   <!-- Initialize Swiper -->
   <script>
-    var swiper = new Swiper(".mySwiper", {
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        renderBullet: function (index, className) {
-          return '<span class="' + className + '">' + (index + 1) + "</span>";
+      var swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + (index + 1) + "</span>";
+          },
         },
-      },
-    });
+      });
   
-    function loadImages() {
-      fetch('escape_rooms/?location=Fullerton')
-        .then(response => response.json())
-        .then(data => {
-          const imageUrls = data.map(item => item.image_url);
-          imageUrls.forEach(imageUrl => {
-            const slide = document.createElement('div');
-            slide.classList.add('swiper-slide');
-            const image = document.createElement('img');
-            image.src = imageUrl;
-            slide.appendChild(image);
-            swiper.appendSlide(slide);
-          });
-        });
-    }
-  
-    loadImages();
   </script>        
       <div class="item">
         <section class="section4__section4"><div class="section4__rect4"></div></section>
