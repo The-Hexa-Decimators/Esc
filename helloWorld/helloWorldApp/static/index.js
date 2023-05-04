@@ -38,36 +38,8 @@ function initMap() {
 				  var rating = data[i].rating;
 				  var phone = data[i].phone;
 				  var url = data[i].url;
-				  console.log(escapeRoom);
 				  var geocoder = new google.maps.Geocoder();
-				  geocoder.geocode({ address: escapeRoom }, function(
-					results,
-					status
-				  ) {
-					if (status === "OK") {
-					  var marker = new google.maps.Marker({
-						map: map,
-						position: results[0].geometry.location,
-						title: name,
-					  });
-					  markers.push(marker);
-					  var infoWindow = new google.maps.InfoWindow({
-						  content: '<div><strong>' + name + '</strong><br>' +
-								   'Rating: ' +  rating + '<br>' +
-								   'Address: ' + escapeRoom + '<br>' +
-								   'Phone:' + phone + '<br>' +
-								   '<a href="' + url + '" target="_blank">' + url + '</a></div>'
-					  });
-					  marker.addListener("click", function() {
-						infoWindow.open(map, marker);
-					  });
-					} else {
-					  alert(
-						"Geocode was not successful for the following reason: " +
-						  status
-					  );
-					}
-				  });
+				  geocodeAndPlaceMarker(geocoder, map, markers, escapeRoom, name, rating, phone, url, escapeRooms);
 				}
 				$("#escape-rooms").html(escapeRooms);
 			  },
@@ -85,4 +57,30 @@ function initMap() {
 	  });
 	}
   }
+  
+  function geocodeAndPlaceMarker(geocoder, map, markers, escapeRoom, name, rating, phone, url, escapeRooms) {
+	geocoder.geocode({ address: escapeRoom}, function(results, status) {
+	  if (status === "OK") {
+		var marker = new google.maps.Marker({
+		  map: map,
+		  position: results[0].geometry.location,
+		  title: name,
+		});
+		markers.push(marker);
+		var infoWindow = new google.maps.InfoWindow({
+		  content: '<div><strong>' + name + '</strong><br>' +
+				   'Rating: ' +  rating + '<br>' +
+				   'Address: ' + escapeRoom + '<br>' +
+				   'Phone:' + phone + '<br>' +
+				   '<a href="' + url + '" target="_blank">' + url + '</a></div>'
+		});
+		marker.addListener("click", function() {
+		  infoWindow.open(map, marker);
+		});
+	  } else {
+		alert("Geocode was not successful for the following reason: " + status);
+	  }
+	});
+  }
   window.initMap = initMap;
+  
