@@ -13,13 +13,10 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-
-    <link rel="stylesheet" type="text/css" href="/css/common.css" />
-    <link rel="stylesheet" type="text/css" href="/css/fonts.css" />
     <link rel="stylesheet" htype="text/css" href='../static/CS4800.css' />
     <link rel="stylesheet"  href='../static/style.css' />
-    <script type="module" src="static/index.ts"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="text/javascript" src="https://unpkg.com/headroom.js@0.12.0/dist/headroom.min.js"></script>
     <script src='../static/index.js'></script>
@@ -28,43 +25,27 @@
   <body class="flex-column">
     <main class="cs4800 main">
       <div class="item">
- 
         <section class="section1__section1">
           <div class="section1__flexCol">
             <div class="section1__flexCol1">
               <div class="section1__flexRow">
                 <h1 class="section1__hero_title">TheEscRooms.com</h1>
                 <div class="spacer"></div>
-                <div style="--src:url(/assets/9b365df952b7801231fac71a34199967.png)" class="section1__wrapper6"></div>
+                <div  class="section1__wrapper6"></div>
                 <div class="spacer1"></div>
-                <div style="--src:url(/assets/921011bb64cf546f0d6d32d552f416f3.png)" class="section1__wrapper"></div>
+				
+                <div class="section1__wrapper"></div>
               </div>
               <div class="section1__content_box">
-                <div style="--src:url(/assets/e1913347dfa3ab0da8f1b37cb209ca33.png)" class="section1__wrapper5">
-                  <div id="findhotels"></div>
-                  <div id="locationField">
-                    <input id="autocomplete" placeholder="Find escape rooms by entering nearby cities" type="text" />
-                  </div>
-                  <div id="controls">
-                    <select id="country">
-                      <option value="all">All</option>
-                      <option value="au">Australia</option>
-                      <option value="br">Brazil</option>
-                      <option value="ca">Canada</option>
-                      <option value="fr">France</option>
-                      <option value="de">Germany</option>
-                      <option value="mx">Mexico</option>
-                      <option value="nz">New Zealand</option>
-                      <option value="it">Italy</option>
-                      <option value="za">South Africa</option>
-                      <option value="es">Spain</option>
-                      <option value="pt">Portugal</option>
-                      <option value="us" selected>U.S.A.</option>
-                      <option value="uk">United Kingdom</option>
-                    </select>
-                  </div>
+				      <form id="location-form">
+					    <label for="location"></label>
+					    <input type="text" id="location" name="location">
+					    <input type="submit" value="Search">
+				      </form>
+                <div class="section1__wrapper5">
                 </div>
               </div>
+              <div id="map"></div>
             </div>
           </div>
         </section>
@@ -72,57 +53,32 @@
       <div class="item">
         <section class="section2__section2">
           <div class="section2__flexCol">
-            <div id="map"></div>
-        
-            <div id="listing">
-              <table id="resultsTable">
-                <tbody id="results"></tbody>
-              </table>
-            </div>
-        
-            <div style="display: none">
-              <div id="info-content">
-                <table>
-                  <tr id="iw-url-row" class="iw_table_row">
-                    <td id="iw-icon" class="iw_table_icon"></td>
-                    <td id="iw-url"></td>
-                  </tr>
-                  <tr id="iw-address-row" class="iw_table_row">
-                    <td class="iw_attribute_name">Address:</td>
-                    <td id="iw-address"></td>
-                  </tr>
-                  <tr id="iw-phone-row" class="iw_table_row">
-                    <td class="iw_attribute_name">Telephone:</td>
-                    <td id="iw-phone"></td>
-                  </tr>
-                  <tr id="iw-rating-row" class="iw_table_row">
-                    <td class="iw_attribute_name">Rating:</td>
-                    <td id="iw-rating"></td>
-                  </tr>
-                  <tr id="iw-website-row" class="iw_table_row">
-                    <td class="iw_attribute_name">Website:</td>
-                    <td id="iw-website"></td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-        
-            <!-- 
-              The `defer` attribute causes the callback to execute after the full HTML
-              document has been parsed. For non-blocking uses, avoiding race conditions,
-              and consistent behavior across browsers, consider loading using Promises.
-              See https://developers.google.com/maps/documentation/javascript/load-maps-js-api
-              for more information.
-              -->
             <script
-              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAT_a0hRM9mZrOyvgZEfddibNAUTyoJDoo&callback=initMap&libraries=places&v=weekly"
-              defer
-            ></script>
+      			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAT_a0hRM9mZrOyvgZEfddibNAUTyoJDoo&callback=initMap&libraries=places&v=weekly"
+      			defer
+    		></script>
             </div>
           </div>
         </section>
+
+      
+      <div>
+        <div class="carousel">
+          <div class="item slide-in" id="item1"><h1>Item 1</h1></div>
+          <div class="item slide-in" id="item2"><h1>Item 2</h1></div>
+          <div class="item slide-in" id="item3"><h1>Item 3</h1></div>
+          <div class="item slide-in" id="item4"><h1>Item 4</h1></div>
+          <div class="controls">
+            <a href="#item1" class="btn"></a>
+            <a href="#item2" class="btn"></a>
+            <a href="#item3" class="btn"></a>
+            <a href="#item4" class="btn"></a>
+          </div>
+        </div>
+      </div>
         
       <!--</div>
+
       <div class="item">
     
         <section class="section3__section3">
@@ -130,18 +86,16 @@
             <div class="section3__flexRow">
               <h1 class="section3__hero_title1">Genre: Horror</h1>
               <div class="spacer"></div>
-              <div style="--src:url(/assets/4979ee6bc8dec2936b369b0d6d996a54.png)" class="section3__wrapper4"></div>
+              <div class="section3__wrapper4"></div>
             </div>
             <div class="section3__flexRow1">
-              <div style="--src:url(/assets/9518277187450fe838f55962018c86cb.png)" class="section3__wrapper3"></div>
+              <div class="section3__wrapper3"></div>
               <div class="spacer"></div>
               <div class="section3__flexRow2">
                 <div class="item">
                   <div class="section3__content_box9">
                     <div class="section3__content_box1">
-                      <div
-                        style="--src:url(/assets/cd772dfc3f99b3306ff37075b1de08e6.png)"
-                        class="section3__wrapper1"
+                      <div class="section3__wrapper1"
                       ></div>
                     </div>
                   </div>
@@ -150,9 +104,7 @@
                 <div class="item">
                   <div class="section3__content_box9">
                     <div class="section3__content_box11">
-                      <div
-                        style="--src:url(/assets/cd772dfc3f99b3306ff37075b1de08e6.png)"
-                        class="section3__wrapper11"
+                      <div class="section3__wrapper11"
                       ></div>
                     </div>
                   </div>
@@ -161,9 +113,7 @@
                 <div class="item">
                   <div class="section3__content_box9">
                     <div class="section3__content_box1">
-                      <div
-                        style="--src:url(/assets/cd772dfc3f99b3306ff37075b1de08e6.png)"
-                        class="section3__wrapper12"
+                      <div class="section3__wrapper12"
                       ></div>
                     </div>
                   </div>
@@ -173,7 +123,6 @@
                   <div class="section3__content_box9">
                     <div class="section3__content_box11">
                       <div
-                        style="--src:url(/assets/cd772dfc3f99b3306ff37075b1de08e6.png)"
                         class="section3__wrapper12"
                       ></div>
                     </div>
@@ -181,9 +130,12 @@
                 </div>
               </div>
               <div class="spacer1"></div>
-              <div style="--src:url(/assets/4cbc1bdf1168c4ece1597d9135fb112a.png)" class="section3__wrapper2"></div>
+              <div  class="section3__wrapper2"></div>
             </div>
           </div>
+
+        </section>
+
         </section>-->
 
         <style>
