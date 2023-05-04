@@ -92,14 +92,8 @@ def get_nearby_escape_rooms(request):
     data = json.loads(response.text)
     escape_rooms = []
     for business in data.get("businesses", []):
-        escape_room = {"name": business["name"],"location": business["location"]["address1"]}
+        escape_room = {"name": business["name"],"location": business["location"]["address1"], 
+                        "url" : business["url"], "phone": business["phone"], "png": business["png"]}
         escape_rooms.append(escape_room)
     return JsonResponse(escape_rooms, safe=False)
 
-
-def get_locations(request):
-    if request.method == "POST":
-        location = request.POST.get("location")
-        escape_rooms = get_nearby_escape_rooms(location)
-        return JsonResponse({"escape_rooms": escape_rooms})
-    return render(request, "map.html")
