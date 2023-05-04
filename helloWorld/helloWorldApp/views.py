@@ -73,3 +73,33 @@ def graph_view(request):
  
     # displaying the model
     show(graph)
+
+
+
+import requests
+import json
+from django.http import JsonResponse
+from django.shortcuts import render
+
+API_KEY = "6UZ8qgyaZYPX87PpD5Qk-9UOFRnpnuKymGdKlrTRjvtLYMqnDuTcQMlQgTEqcHFeIZ-sqUqN9qjm0wcAYNT6c4_3SCmaK3SKJSE027bAKyAAKX6SAzPC2_V2zWJQZHYx"
+
+def get_nearby_escape_rooms(request):
+    location = request.GET.get('location')
+    headers = {"Authorization": f"Bearer {API_KEY}"}
+    url = "https://api.yelp.com/v3/businesses/search"
+    params = {"term": "Escape Rooms", "location": location}
+    response = requests.get(url, headers=headers, params=params)
+    data = json.loads(response.text)
+    escape_rooms = []
+    for business in data.get("businesses", []):
+        escape_room = {"name": business["name"],"location": business["location"]["address1"]}
+        escape_rooms.append(escape_room)
+    return JsonResponse(escape_rooms, safe=False)
+
+
+def get_locations(request):
+    if request.method == "POST":
+        location = request.POST.get("location")
+        escape_rooms = get_nearby_escape_rooms(location)
+        return JsonResponse({"escape_rooms": escape_rooms})
+    return render(request, "map.html")

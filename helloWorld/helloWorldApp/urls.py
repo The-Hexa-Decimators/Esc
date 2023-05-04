@@ -17,6 +17,9 @@ Including another URLconf
 from django.urls import path
 from .views import hello
 from . import views
+from django.urls import path
+from .views import get_nearby_escape_rooms
+from .views import get_locations
 
 urlpatterns = [
     path('', hello),
@@ -25,4 +28,5 @@ urlpatterns = [
     path('all/', views.view_items, name='view_items'),
     path('home_view/', views.home_view, name = 'home_view'),
     path('graph/', views.graph_view, name='graph-view'),
+    path('escape_rooms/', get_nearby_escape_rooms, name='escape_rooms'),
 ]
