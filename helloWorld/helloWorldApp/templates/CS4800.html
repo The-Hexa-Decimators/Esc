@@ -262,16 +262,19 @@
           So, we have to place them individually
           at their correct positions. */
           .slide-btn-1 {
-              left: 45%;
+              left: 40%;
           }
           .slide-btn-2 {
-              left: 50%;
+              left: 45%;
           }
           .slide-btn-3 {
-              left: 55%;
+              left: 50%;
           }
           .slide-btn-4 {
-              left: 60%;
+              left: 55%;
+          }
+          .slide-btn-5 {
+            left: 60%;
           }
           /* When we focus on the particular button, 
           the animation stops to that particular image 
@@ -292,17 +295,21 @@
               animation: none;
               left: -300%;
           }
+          .slide-btn-5:focus~.slideshow-wrapper {
+              animation: none;
+              left: -400%;
+          }
           /* when we focus on the button, the background color changes */
           .slide-btn:focus {
               background-color: #4a0202;
           }
           /* ----- end of carousel control buttons stylings ----- */
       </style>
-      <title>Geeks For Geeks</title>
+      <title>Easter Egg</title>
   </head>
   <body>
       <div class="container">
-          <h1 class="main-heading">Responsive Carousel using CSS</h1>
+          <h1 class="main-heading">Hello</h1>
           <div class="content">
               <!-- The content which is placed at the center of the carousel -->
               <div class="carousel-content">
@@ -317,6 +324,7 @@
                   <button class="slide-btn slide-btn-2"></button>
                   <button class="slide-btn slide-btn-3"></button>
                   <button class="slide-btn slide-btn-4"></button>
+                  <button class="slide-btn slide-btn-5"></button>
                   <!-- carousel wrapper which contains all images -->
                   <div class="slideshow-wrapper">
                       <div class="slide">
