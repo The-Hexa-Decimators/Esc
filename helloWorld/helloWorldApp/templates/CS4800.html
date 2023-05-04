@@ -26,16 +26,36 @@
     ></script>
     <script src='../static/index.js'></script>
   </head>
+  <body>
+  <div class="header">
+    <h1>TheEscRooms.Com</h1>
+  </div>
+
+  <div class="header2">
+    <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+      <form id="location-form">
+        <label for="location"></label>
+        <input type="text" id="location" name="location" style="height: 20%; width: 40%; font-size: 20px; ">
+      </form>
+    </div>
+  </div>
+  
 
   
-				      <form id="location-form">
-					    <label for="location"></label>
-					    <input type="text" id="location" name="location">
-					    <input type="submit" value="Search">
-				      </form>
-        
+  
 
-              <div id="map"></div>
+  <div class="header3">
+    <h1>Map<h1>
+  </div>
+
+
+  <div class="boxmajor">
+    <div id="map" class="map-container"></div>
+  </div>
+
+  
+
+
 
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
