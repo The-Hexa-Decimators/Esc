@@ -19,7 +19,6 @@ from .views import hello
 from . import views
 from django.urls import path
 from .views import get_nearby_escape_rooms
-from .views import get_locations
 
 urlpatterns = [
     path('', hello),

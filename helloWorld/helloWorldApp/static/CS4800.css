@@ -122,7 +122,6 @@
 }
 
 .section1__content_box {
-  display: flex;
   flex-direction: column;
   background-color: rgb(30, 30, 30);
   position: relative;
@@ -907,4 +906,4 @@
   flex-grow: 1;
   min-height: 575px;
   margin: 881px 0px 0px;
-}/*# sourceMappingURL=CS4800.css.map */
+}
