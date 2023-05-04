@@ -79,6 +79,7 @@ function initMap() {
 				   'Phone:' + phone + '<br>' +
 				   '<a href="' + url + '" target="_blank">' + url + '</a></div>'
 		});
+		console.log(escapeRoom);
 		marker.addListener("click", function() {
 		  infoWindow.open(map, marker);
 		});
