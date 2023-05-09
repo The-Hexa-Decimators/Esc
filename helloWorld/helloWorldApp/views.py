@@ -92,7 +92,15 @@ def get_nearby_escape_rooms(request):
     data = json.loads(response.text)
     escape_rooms = []
     for business in data.get("businesses", []):
-        escape_room = {"name": business["name"],"location": business["location"]["address1"], "rating": business["rating"], 
-                        "url": business["url"], "phone": business["phone"], "image_url": business["image_url"]}
+        escape_room = {
+            "name": business["name"],
+            "rating": business["rating"],
+            "location": business["location"]["address1"],
+            "phone": business["phone"],
+            "url": business["url"],
+            "image_url": business["image_url"],
+            "display_address": business["location"]["display_address"],
+            "display_phone": business["display_phone"],
+        }
         escape_rooms.append(escape_room)
     return JsonResponse(escape_rooms, safe=False)
