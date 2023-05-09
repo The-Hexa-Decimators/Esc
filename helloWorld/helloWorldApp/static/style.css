@@ -3,34 +3,83 @@
 .header {
   background-color: black;
   color: red;
-  padding: 10px;
+  font-size: 24px;
   text-align: center;
-
 }
 
 .header2{
   background-color: black;
-  height: 40px;
-  padding: 10px;
+  height: 7%;
   margin: auto;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+
 }
 
 .header3{
+  display: flex;
+  background-color: black;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 75px;
+}
+
+.button {
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+
+
+
+.header4{
+  background-color: black;
+
+}
+
+.header4left{
   background-color: black;
   color: red;
   text-align: left;
-  padding: 10px;
+  padding-left: 1%;
+  font-size: 24px;
+  height: 100%;
+  width: 50%;
+
+}
+.header5{
+  background-color: black;
+  height: 10%;
+  width: 100%;
 }
 
 
 .boxmajor{
-  height: 1000px;
+  height: 75%;
+  width: 100%;
   margin: auto;
   text-align: center;
   outline-style: double;
   outline-color: red;
-  outline-width: 10px;
+  outline-width: 15px;
 
 }
  #map {
@@ -38,10 +87,61 @@
   margin: auto;
 }
 
+.boxmajor2 {
+  margin-top: 5%;
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  gap: 3%;
+  padding: 5%;
 
-/* 
- * Optional: Makes the sample page fill the window. 
- */
+}
+
+#results {
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+    margin: 2%;
+    padding: 10px;
+    border: 7px double red;
+    border-radius: 5%;
+    background-color: grey;
+    width: 100%; /* Set the width of the card */
+    margin-bottom: 20px;
+    text-align: center;
+}
+.card-body {
+  padding: 1rem;
+}
+
+.card-img {
+  width: 75%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 30px;
+  margin-bottom: 0.5rem;
+}
+
+.card-link {
+  color: red;
+  font-size: 30px;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+
 html,
 body {
   height: 100%;
@@ -51,11 +151,21 @@ body {
   background-color: black;
 }
 
+.location {
 
+  border: 5px solid red;
+  border-radius: 30px;
+}
+
+.location[type=text] {
+  background-color: black;
+  color: white;
+}
 #location-form{
   -webkit-box-flex: 1 1 140px;
   -ms-flex: 1 1 140px;
   flex: 1 1 140px;
   align-items: center;
+  font-size: 20px;
 }
 
